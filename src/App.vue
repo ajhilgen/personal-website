@@ -7,11 +7,11 @@
     </label>
     <div id="app-container">
       <div class="nav-header nav-margin nav-dark row align-items-center">
-        <div class="offset-sm-2 col-sm-3">
+        <div class="offset-sm-2 col-sm-4 justify-content-start">
           <span class="first-name text-medium">Adam</span>
           <span class="last-name text-medium">Hilgenberg</span>
         </div>
-        <ul class="nav col-sm-7 justify-content-end">
+        <ul class="nav col-sm-6 justify-content-end">
           <li v-for="link in navLinks" @mouseover="toggleLinks" @mouseout="toggleLinks" :class="{active: link.isActive}" class="nav-item">
             <router-link :to="link.route" class='nav-link'>{{ link.text }}</router-link>
           </li>
@@ -62,7 +62,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
 @import 'bootstrap/dist/css/bootstrap.css';
 @import 'bootstrap-vue/dist/bootstrap-vue.css';
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
@@ -72,6 +72,7 @@ export default {
 html, body, #app, #app-container {
   height: 100%;
 }
+
 #app > input, label {
   font-family: 'Montserrat', sans-serif;
   color: #ffffff;
@@ -96,12 +97,12 @@ label {
 }
 
 .social-widget {
-  padding: 5px 5px 0 0;
-}
+  padding: 10px 5px 0 0;
 
-.social-widget > a > label {
+  > a > label {
     cursor: pointer;
     width: 100%;
+  }
 }
 
 .nav-header.row {
@@ -112,11 +113,13 @@ label {
 #lightlabel {
   cursor: pointer;
   position: absolute;
-}
-#lightlabel span {
+
+  span {
     text-align:center;
     padding:3px 0px;
+  }
 }
+
 span.fa.fa-lightbulb-o {
   width: auto;
 }
@@ -143,11 +146,6 @@ span.fa.fa-lightbulb-o {
   text-align: center;
 }
 
-.circular-image {
-  border-radius: 10%;
-  width: auto;
-}
-
 .nav-margin {
   margin-bottom: 1.0rem;
   padding: 0.5rem;
@@ -155,109 +153,157 @@ span.fa.fa-lightbulb-o {
 
 /* Toggable lightswitch CSS */
 #lightswitch {
-    position:absolute;
-    top:-9999px;
-    left:-9999px;
+  position:absolute;
+  top:-9999px;
+  left:-9999px;
+
+  + #lightlabel {
+    background-color:#282828;
+    border-color: #D0D0D0;
+
+    + #app-container {
+      background-color: #343a40;
+      color: #ffffff;
+
+      label {
+        background-color:#282828;
+        border-color: #D0D0D0;
+      }
+
+      hr {
+        border-color: #ffffff;
+      }
+
+      .container {
+        background-color: #343a40;
+        max-width: 1920px;
+      }
+
+      .section-title {
+        color: #D00000;
+      }
+
+      .first-name {
+        color: #D00000;
+      }
+
+      .last-name {
+        color: #ffffff;
+      }
+
+      .nav-header {
+        border-bottom: 2px solid #808080;
+      }
+
+      .nav-header.nav-dark {
+        background-color: #282828;
+      }
+
+      .nav-link {
+        color: #808080;
+      }
+
+      .nav-link:hover {
+        color: #ffffff;
+      }
+
+      .nav-item.active a {
+        color: #ffffff;
+      }
+
+      .carousel-indicators {
+        li {
+          outline: none;
+          background-color: rgba(255, 0, 0, 0.5);
+        }
+
+        li.active {
+          background-color: rgba(255, 0, 0, 1);
+        }
+      }
+    }
+
+    > .light-text::after {
+      content: ' On';
+    }
+  }
 }
 
-#lightswitch:checked + #lightlabel {
-  background-color: #E0E0E0;
-  border-color: #282828;
-  color: #282828;
-}
-#lightswitch + #lightlabel {
-  background-color:#282828;
-  border-color: #D0D0D0;
-}
+#lightswitch:checked {
 
-#lightswitch:checked + #lightlabel + #app-container label {
-  background-color: #E0E0E0;
-  border-color: #282828;
-  color: #282828;
-}
-#lightswitch + #lightlabel + #app-container label {
-  background-color:#282828;
-  border-color: #D0D0D0;
-}
+  + #lightlabel {
+    background-color: #E0E0E0;
+    border-color: #282828;
+    color: #282828;
 
-#lightswitch:checked + #lightlabel + #app-container {
-  background-color: #ffffff;
-  color: #343a40;
-}
-#lightswitch + #lightlabel + #app-container {
-  background-color: #343a40;
-  color: #ffffff;
-}
+    + #app-container {
+      background-color: #ffffff;
+      color: #343a40;
 
-#lightswitch + #lightlabel > .light-text::after {
-  content: ' On';
-}
-#lightswitch:checked + #lightlabel > .light-text::after{
-  content: ' Off';
-}
+      label {
+        background-color: #E0E0E0;
+        border-color: #282828;
+        color: #282828;
+      }
 
-#lightswitch:checked + #lightlabel + #app-container hr {
-  border-color: #606060;
-}
-#lightswitch + #lightlabel + #app-container hr {
-  border-color: #ffffff;
-}
+      hr {
+        border-color: #606060;
+      }
 
-#lightswitch:checked + #lightlabel + #app-container .section-title {
-  color: #0000CC;
-}
-#lightswitch + #lightlabel + #app-container .section-title {
-  color: #D00000;
-}
+      .container {
+        background-color: #ffffff;
+        max-width: 1920px;
+      }
 
-#lightswitch:checked + #lightlabel + #app-container .first-name {
-  color: #0000CC;
-}
-#lightswitch + #lightlabel + #app-container .first-name {
-  color: #D00000;
-}
+      .section-title {
+        color: #0000CC;
+      }
 
-#lightswitch:checked + #lightlabel + #app-container .last-name {
-  font-weight: 500;
-  color: #343a40;
-}
-#lightswitch + #lightlabel + #app-container .last-name {
-  color: #ffffff;
-}
+      .first-name {
+        color: #0000CC;
+      }
 
-#lightswitch:checked + #lightlabel + #app-container .nav-header {
-  border-bottom: 2px solid #E0E0E0;
-}
-#lightswitch + #lightlabel + #app-container .nav-header {
-  border-bottom: 2px solid #808080;
-}
+      .last-name {
+        font-weight: 500;
+        color: #343a40;
+      }
 
-#lightswitch:checked + #lightlabel + #app-container .nav-header.nav-dark {
-  background-color: #F0F0F0;
-}
-#lightswitch + #lightlabel + #app-container .nav-header.nav-dark {
-  background-color: #282828;
-}
+      .nav-header {
+        border-bottom: 2px solid #808080;
+      }
 
-#lightswitch:checked + #lightlabel + #app-container .nav-link {
-  color: #343a40;
-}
-#lightswitch + #lightlabel + #app-container .nav-link {
-  color: #808080;
-}
+      .nav-header.nav-dark {
+        background-color: #F0F0F0;
+      }
 
-#lightswitch:checked + #lightlabel + #app-container .nav-link:hover {
-  font-weight: 500;
-  color: #282828;
-}
-#lightswitch + #lightlabel + #app-container .nav-link:hover {
-  color: #ffffff;
-}
+      .nav-link {
+        color: #343a40;
+      }
 
-#lightswitch:checked + #lightlabel + #app-container .nav-item.active a {
-  color: #282828;
-}
-#lightswitch + #lightlabel + #app-container .nav-item.active a {
-  color: #ffffff;
+      .nav-link:hover {
+        font-weight: 500;
+        color: #282828;
+      }
+
+      .nav-item.active a {
+        color: #282828;
+      }
+
+      .carousel-indicators {
+        li {
+          outline: none;
+          background-color: rgba(0, 0, 255, 0.5);
+        }
+
+        li.active {
+          background-color: rgba(0, 0, 255, 1);
+        }
+      }
+    }
+
+    > .light-text::after{
+      content: ' Off';
+    }
+  }
 }
 </style>

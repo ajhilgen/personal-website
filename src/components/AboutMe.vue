@@ -3,7 +3,20 @@
     <div class="col-sm-4">
       <div class="row">
         <div class="col-sm-12 content-center">
-          <img class="circular-image" src="../assets/profile_picture.png" alt="Profile">
+          <b-carousel id="profile-carousel" indicators>
+            <b-carousel-slide>
+              <img slot="img" class="d-block img-fluid w-100 circular-image"
+                   src="../assets/profile_picture_2.png" alt="BlackAndWhite">
+            </b-carousel-slide>
+            <b-carousel-slide>
+              <img slot="img" class="d-block img-fluid w-100 circular-image"
+                   src="../assets/profile_picture_3.png" alt="Pups">
+            </b-carousel-slide>
+            <b-carousel-slide>
+              <img slot="img" class="d-block img-fluid w-100 circular-image"
+                   src="../assets/profile_picture_4.png" alt="FriendAndSnow">
+            </b-carousel-slide>
+          </b-carousel>
         </div>
       </div>
       <div class="row">
@@ -18,27 +31,11 @@
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class="col-sm-3 content-center social-widget">
-          <a href="https://twitter.com/rpgadam" target="_blank">
+        <div v-for="link in socialLinks" class="col-sm-3 content-center social-widget">
+          <a :href="link.url" target="_blank">
             <label>
-              <i class="fa fa-twitter"/>
-              Twitter
-            </label>
-          </a>
-        </div>
-        <div class="col-sm-3 content-center social-widget">
-          <a href="https://www.linkedin.com/in/adam-hilgenberg" target="_blank">
-            <label>
-              <i class="fa fa-linkedin"/>
-              LinkedIn
-            </label>
-          </a>
-        </div>
-        <div class="col-sm-3 content-center social-widget">
-          <a href="https://github.com/ajhilgen" target="_blank">
-            <label>
-              <i class="fa fa-github"/>
-              Github
+              <i :class="link.labelIcon"/>
+              {{link.labelText}}
             </label>
           </a>
         </div>
@@ -58,11 +55,52 @@
 export default {
   name: 'AboutMe',
   data() {
-    return {};
+    return {
+      slide: 0,
+      sliding: null,
+      socialLinks: [{
+          labelIcon: 'fa fa-twitter',
+          labelText: 'Twitter',
+          url: 'https://twitter.com/rpgadam'
+        },
+        {
+          labelIcon: 'fa fa-linkedin',
+          labelText: 'LinkedIn',
+          url: 'https://www.linkedin.com/in/adam-hilgenberg'
+        },
+        {
+          labelIcon: 'fa fa-github',
+          labelText: 'Github',
+          url: 'https://github.com/ajhilgen'
+        }
+      ]
+    };
   },
+  methods: {
+    onSlideStart (slide) {
+      this.sliding = true
+    },
+    onSlideEnd (slide) {
+      this.sliding = false
+    }
+  }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style lang="scss">
+
+#profile-carousel {
+  text-shadow: 1px 1px 2px #333;
+
+  .carousel-item {
+    outline: none;
+  }
+}
+
+.circular-image {
+  border-radius: 10%;
+  width: auto;
+}
+
 </style>
