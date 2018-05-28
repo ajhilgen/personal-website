@@ -1,9 +1,9 @@
 <template>
   <div class="row justify-content-center">
     <div class="col-sm-4">
-      <div class="row">
-        <div class="col-sm-12 content-center">
-          <b-carousel id="profile-carousel" indicators>
+      <div class="row justify-content-center">
+        <div class="col-sm-9">
+          <b-carousel id="profile-carousel" indicators :interval="0">
             <b-carousel-slide>
               <img slot="img" class="d-block img-fluid w-100 circular-image"
                    src="../assets/profile_picture_2.png" alt="BlackAndWhite">
