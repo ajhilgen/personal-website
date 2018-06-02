@@ -9,7 +9,19 @@
             <span class="fa fa-user-circle-o fa-3x icon-red" aria-hidden="true"/>
   				  <h4>About Me</h4>
           </div>
-  				<p>About me here......</p>
+          <p>
+            Hi! My name is Adam Hilgenberg and I am a software developer, casual gamer, and eSport enthusiast.
+          </p>
+          <p>
+            In my free time I am typically bingeing on some TV show, cooking, gaming, doing personal projects, or training agility with my dog.
+          </p>
+          <p>
+            My experience revolves primarily around building web applications for enterprise.
+            Whether it is front-end, back-end, databases, or any combination thereof.
+          </p>
+          <p>
+            I can do it all and I am always looking for ways to become better!
+          </p>
   			</div>
 
   			<!-- Compétences -->
@@ -39,17 +51,54 @@
   						<h5><strong>Software Developer</strong> State Farm Insurance</h5>
   						<span>Tempe, AZ, United States</span>
   						<span> -- April 2015 to Current</span>
-  						<p>Une petite description du poste, décrivez votre rôle et vos
-  tâches en quelques mots afin que le recruteur en sache plus sur la
-  nature de votre travail.</p>
+  						<p>
+                <ul>
+                  <li>
+                    Built and managed an application/micro-services to simplify the IT application change process.<br/>
+                    The tool is being used to house all information on IT application assets in StateFarm
+                    as well as absorbing functionality current provided by vendor products
+                    for handling registration, ownership, versioning, and risk analysis.
+                  </li>
+                  <li>
+                    Built and managed a set of analytics dashboards for the enterprise.<br/>
+                    These dashboards took aggregated information from every application in every evironment in the enterprise.<br/>
+                    Key usages of these dashboards include monitoring applications availability, performance, resource consumption, costing, and dependency management.<br/>
+                    Other use cases were to monitor, at a high level, business line application uptime and long term environment level resource utilization.
+                  </li>
+                </ul>
+              </p>
+              <p>
+                <i>*All the above were done in a CI/CD environment will fully automated pipelines, testing, and security scanning.</i>
+              </p>
+              <p>
+                <strong>Tools :</strong>
+                Java, Spring MVC, Javascript, HTML5, CSS3, Docker, Ember.js, Pivotal Cloud Foundry,
+                PostgreSQL, Git, Jenkins, GitlabCI
+              </p>
   					</li>
   					<li>
-  						<h5><strong>Software Engineer</strong> Syntel Inc</h5>
+  						<h5><strong>Software Engineer</strong> Syntel Inc contracted to American Express</h5>
   						<span>Phoenix, AZ, United States</span>
   						<span> -- July 2014 to April 2015</span>
-  						<p>Une petite description du poste, décrivez votre rôle et vos
-  tâches en quelques mots afin que le recruteur en sache plus sur la
-  nature de votre travail.</p>
+  						<p>
+                Worked on upgrading the File Transfer system for financial transactions.
+              </p>
+              <p>
+                <strong>Tools :</strong>
+                Java, RedHat Enterprise Linux (RHEL), other vendor products.
+              </p>
+  					</li>
+            <li>
+  						<h5><strong>Software Engineer</strong> Northern Arizona University</h5>
+  						<span>Flagstaff, AZ, United States</span>
+  						<span> -- November 2013 to July 2014</span>
+  						<p>
+                Built a SQL table relationship application to allow our developers to navigate and view the columns and keys for ~5000 tables quickyl and efficiently.
+              </p>
+              <p>
+                <strong>Tools :</strong>
+                C#, ASP.NET, .NET, SQL Server(T-SQL)
+              </p>
   					</li>
   				</ul>
   			</div>
@@ -76,8 +125,22 @@
             <span class="fa fa-gamepad fa-3x icon-red" aria-hidden="true"/>
   				  <h4>Hobbies / Interests</h4>
           </div>
-  				<p><strong>Sports :</strong> si vous en pratiquez</p>
-  				<p><strong>Association :</strong> si vous êtes membre d'une association</p>
+  				<p>
+            <strong>Sports / eSports :</strong>
+            <ul>
+              <li>Football (Philadelphia Eagles)</li>
+              <li>League of Legends (TSM)</li>
+              <li>Overwatch (London Spitfire)</li>
+              <li>Fortnite (TSM)</li>
+            </ul>
+          </p>
+  				<p>
+            <strong>Games :</strong>
+            Final Fantasy, Kingdom Hearts, a lot of JRPG's, the above games.</p>
+          <p>
+            <strong>Activites :</strong>
+            Working out, Hiking, Dog Agility, Snowboarding
+          </p>
   			</div>
 
   			<!-- Contact -->
@@ -91,7 +154,6 @@
   					<li class="home">Scottsdale, AZ, United States</li>
   					<li class="phone">+1 (480) 358-7701</li>
   					<li class="email"><a href="mailto:ajhilgen@gmail.com">ajhilgen@gmail.com</a></li>
-  					<!-- <li class="site"><a href="site goes here">site goes here</a></li> -->
   				</ul>
   			</div>
   	</section>
@@ -182,10 +244,6 @@ export default {
 		position: relative;
  	}
 
-	.experiences ul, .education ul {
-		margin-left: 60px;
-	}
-
 	section[role=main] h5 {
 		margin-bottom: 0px;
 	}
@@ -211,6 +269,10 @@ export default {
 
 	.experiences li, .education li {
 		margin-bottom: 63px;
+	}
+
+  .experiences li li{
+		margin-bottom: 5px;
 	}
 
 	.experiences li:last-child, .education li:last-child {

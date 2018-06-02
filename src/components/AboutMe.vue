@@ -45,7 +45,18 @@
       <span class="section-title">About</span>
       <hr>
       <p>
-        Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum
+        Hi! My name is Adam Hilgenberg and I am a software developer, casual gamer, and eSport enthusiast.
+      </p>
+      <p>
+        In my free time I am typically bingeing on some TV show, cooking, gaming, doing personal projects, or training agility with my dog.
+      </p>
+      <p>
+        My experience revolves primarily around building web applications for enterprise.
+        Whether it is front-end, back-end, databases, or any combination thereof.
+        If you would like to know more, check out <router-link to="/resume" >my resume/cv</router-link>.
+      </p>
+      <p>
+        I can do it all and am always looking for ways to do better!
       </p>
     </div>
   </div>

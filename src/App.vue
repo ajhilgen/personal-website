@@ -35,11 +35,11 @@ export default {
         isActive: true
       }, {
         text: 'Portfolio',
-        route: '/',
+        route: '/under-construction',
         isActive: true
       }, {
         text: 'Snippets',
-        route: '/',
+        route: '/under-construction',
         isActive: true
       }, {
         text: 'Resume',
