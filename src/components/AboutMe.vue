@@ -20,7 +20,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-sm-12 content-center">
+        <div class="col-sm-12 content-center name-plate">
           <span class="first-name text-large">Adam</span>
           <span class="last-name text-large">Hilgenberg</span>
         </div>
@@ -107,6 +107,14 @@ export default {
   .carousel-item {
     outline: none;
   }
+
+  .carousel-indicators {
+    bottom: -30px;
+  }
+}
+
+.name-plate {
+  padding-top: 15px;
 }
 
 .circular-image {
