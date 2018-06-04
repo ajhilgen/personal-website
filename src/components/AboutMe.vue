@@ -51,12 +51,13 @@
         In my free time I am typically bingeing on some TV show, cooking, gaming, doing personal projects, or training agility with my dog.
       </p>
       <p>
-        My experience revolves primarily around building web applications for enterprise.
-        Whether it is front-end, back-end, databases, or any combination thereof.
+        My experience revolves primarily around building web applications for enterprise,
+        so whether it is front-end, back-end, databases, or any combination thereof, then I am your man.
         If you would like to know more, check out <router-link to="/resume" >my resume/cv</router-link>.
       </p>
       <p>
-        I can do it all and am always looking for ways to do better!
+        <i>"We don't get to choose how we start in this life. Real 'greatness' is what you do with the hand you're dealt."</i></br>
+        - Victor Sullivan, Uncharted 3
       </p>
     </div>
   </div>

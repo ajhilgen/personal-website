@@ -16,11 +16,8 @@
             In my free time I am typically bingeing on some TV show, cooking, gaming, doing personal projects, or training agility with my dog.
           </p>
           <p>
-            My experience revolves primarily around building web applications for enterprise.
-            Whether it is front-end, back-end, databases, or any combination thereof.
-          </p>
-          <p>
-            I can do it all and I am always looking for ways to become better!
+            My experience revolves primarily around building web applications for enterprise,
+            so whether it is front-end, back-end, databases, or any combination thereof, then I am your man.
           </p>
   			</div>
 
