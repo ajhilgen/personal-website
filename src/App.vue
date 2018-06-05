@@ -139,8 +139,6 @@ label {
 }
 
 #lightlabel {
-  //TODO: trun display on when resume page ready
-  //display: none;
   cursor: pointer;
   position: absolute;
 

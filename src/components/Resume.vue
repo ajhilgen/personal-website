@@ -167,6 +167,7 @@ export default {
   	width: 92%;
   	margin: 0 auto;
     padding-top: 40px;
+    overflow: hidden;
 
     .row {
         margin-bottom: 30px;
