@@ -3,19 +3,37 @@
     <input type="checkbox" id="lightswitch" />
     <label for="lightswitch" id="lightlabel">
         <i class="fa fa-lightbulb-o"/>
-        <span class="light-text">Lights</span>
+        <span class="light-text"></span>
     </label>
     <div id="app-container">
-      <div class="nav-header nav-margin nav-dark row align-items-center">
-        <div class="offset-sm-2 col-sm-4 justify-content-start">
+      <div v-if="screenWidth > 768" class="nav-header nav-margin nav-dark row align-items-center">
+        <div class="offset-2 col-8 col-sm-4 justify-content-start">
           <span class="first-name text-medium">Adam</span>
           <span class="last-name text-medium">Hilgenberg</span>
         </div>
-        <ul class="nav col-sm-6 justify-content-end">
+        <ul class="nav col-6 justify-content-end">
           <li v-for="link in navLinks" @mouseover="toggleLinks" @mouseout="toggleLinks" :class="{active: link.isActive}" class="nav-item">
             <router-link :to="link.route" class='nav-link'>{{ link.text }}</router-link>
           </li>
         </ul>
+      </div>
+      <div v-else class="nav-header nav-margin nav-dark row align-items-center">
+        <div class="offset-2 col-8 col-sm-4 justify-content-start">
+          <span class="first-name text-medium">Adam</span>
+          <span class="last-name text-medium">Hilgenberg</span>
+        </div>
+        <b-btn v-b-toggle.navbarContent variant="primary" class="col-2 ml-auto">
+          <span><i class="fa fa-bars fa-1x"></i></span>
+        </b-btn>
+        <b-collapse class="collapse col-sm-5" id="navbarContent">
+          <div class="row">
+            <ul class="nav row justify-content-end">
+              <li v-for="link in navLinks" @mouseover="toggleLinks" @mouseout="toggleLinks" :class="{active: link.isActive}" class="col-sm-12 nav-item">
+                <router-link :to="link.route" class='nav-link'>{{ link.text }}</router-link>
+              </li>
+            </ul>
+          </div>
+        </b-collapse>
       </div>
       <div class="container">
         <router-view></router-view>
@@ -45,7 +63,8 @@ export default {
         text: 'Resume',
         route: 'resume',
         isActive: true
-      }]
+      }],
+      screenWidth: screen.width
     }
   },
   methods: {
@@ -57,7 +76,16 @@ export default {
         }
       });
       return;
+    },
+    handleResize() {
+      this.screenWidth = screen.width;
     }
+  },
+  mounted() {
+    window.addEventListener('resize', this.handleResize)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize)
   }
 };
 </script>
@@ -226,7 +254,7 @@ span.fa.fa-lightbulb-o {
     }
 
     > .light-text::after {
-      content: ' On';
+      content: 'Lights On';
     }
   }
 }
@@ -304,8 +332,18 @@ span.fa.fa-lightbulb-o {
     }
 
     > .light-text::after{
-      content: ' Off';
+      content: 'Lights Off';
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #lightswitch + #lightlabel > .light-text::after{
+    content: ' On';
+  }
+
+  #lightswitch:checked + #lightlabel > .light-text::after{
+    content: ' Off';
   }
 }
 </style>

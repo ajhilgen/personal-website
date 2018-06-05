@@ -31,11 +31,11 @@
         </div>
       </div>
       <div class="row justify-content-center">
-        <div v-for="link in socialLinks" class="col-sm-3 content-center social-widget">
+        <div v-for="link in socialLinks" class="col-3 col-sm-4 content-center social-widget">
           <a :href="link.url" target="_blank">
             <label>
               <i :class="link.labelIcon"/>
-              {{link.labelText}}
+              <span v-if="screenWidth > 768">{{link.labelText}}</span>
             </label>
           </a>
         </div>
@@ -85,7 +85,8 @@ export default {
           labelText: 'Github',
           url: 'https://github.com/ajhilgen'
         }
-      ]
+      ],
+      screenWidth: screen.width
     };
   },
   methods: {
@@ -94,7 +95,16 @@ export default {
     },
     onSlideEnd (slide) {
       this.sliding = false
+    },
+    handleResize() {
+      this.screenWidth = screen.width;
     }
+  },
+  mounted() {
+    window.addEventListener('resize', this.handleResize)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize)
   }
 };
 </script>
