@@ -22,7 +22,7 @@
           <span class="first-name text-medium">Adam</span>
           <span class="last-name text-medium">Hilgenberg</span>
         </div>
-        <b-btn v-b-toggle.navbarContent variant="primary" class="col-2 ml-auto">
+        <b-btn v-b-toggle.navbarContent variant="primary" class="col-2 ml-auto nav-toggle">
           <span><i class="fa fa-bars fa-1x"></i></span>
         </b-btn>
         <b-collapse class="collapse col-sm-5" id="navbarContent">
@@ -241,6 +241,11 @@ span.fa.fa-lightbulb-o {
         color: #ffffff;
       }
 
+      .nav-toggle.btn-primary {
+        background-color: #282828;
+        border-color: #ffffff;
+      }
+
       .carousel-indicators {
         li {
           outline: none;
@@ -316,6 +321,12 @@ span.fa.fa-lightbulb-o {
       }
 
       .nav-item.active a {
+        color: #282828;
+      }
+
+      .nav-toggle.btn-primary {
+        background-color: #F0F0F0;
+        border-color: #282828;
         color: #282828;
       }
 
