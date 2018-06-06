@@ -29,7 +29,9 @@
           <div class="row">
             <ul class="nav row justify-content-end">
               <li v-for="link in navLinks" @mouseover="toggleLinks" @mouseout="toggleLinks" :class="{active: link.isActive}" class="col-sm-12 nav-item">
-                <router-link :to="link.route" class='nav-link'>{{ link.text }}</router-link>
+                <b-btn v-b-toggle.navbarContent variant="link">
+                  <router-link :to="link.route" class='nav-link'>{{ link.text }}</router-link>
+                </b-btn>
               </li>
             </ul>
           </div>
